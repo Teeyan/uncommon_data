@@ -9,6 +9,7 @@ entrypoints==0.2.3
 Flask==0.12.2
 gap-stat==1.0.1
 gapkmean==1.0
+gunicorn==19.7.1
 html5lib==1.0b10
 idna==2.6
 ipykernel==4.6.1
