@@ -102,6 +102,6 @@ def tribe_cluster(file):
             )
         )
     fig = go.Figure(data=plot_data_3d, layout=layout)
-    py.iplot(fig, filename='tribe-3d')
+    py.plot(fig, filename='tribe-3d')
 
     return meta_tribe, tribe_colors
