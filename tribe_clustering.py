@@ -11,13 +11,15 @@ import plotly.graph_objs as go
 plotly.tools.set_credentials_file(username='Teeyan', api_key='9gnWe4vFPKT5iGTc05ob')
 
 
-def main():
+def tribe_cluster(file):
     # Get the data file name and the number of tribes
     tribe_names = ["Ugandan", "Sanic", "Classical", "NANI?!?"]
     tribe_colors = ["rgb(255, 0, 0)", "rgb(30,144,255)", "rgb(0,0,0)", "rgb(148,0,211)"]
+    img_link = ["https://imgur.com/VZAOqE0.png", "https://imgur.com/2LkeG4V.png", "https://imgur.com/WSZwQ4O.png",
+                "https://imgur.com/Bd8Iafa.png"]
     
     # Read in the data set to a clean frame
-    data = pd.read_csv("data/iris.txt", sep=",")
+    data = pd.read_csv(file, sep=",")
     
     # Clean the dataset with respect to categorical vs continuous variables
     drop_columns = []
@@ -66,9 +68,10 @@ def main():
         tribe_mean = []
         tribe_var = []
         for i in range(0, len(tribe_data.columns)):
-            tribe_mean.append(tribe_data.iloc[:,i].mean())
-            tribe_var.append(math.pow(tribe_data.iloc[:,i].std(),2))
-        meta_tribe.append({"tribe":tribe_names[tribe_num], "members": len(tribes[tribe_num]), "mean": tribe_mean, "var": tribe_var})
+            tribe_mean.append(round(tribe_data.iloc[:, i].mean(), 2))
+            tribe_var.append(round(math.pow(tribe_data.iloc[:, i].std(), 2), 2))
+        meta_tribe.append({"img": img_link[tribe_num], "tribe": tribe_names[tribe_num], "members": len(tribes[tribe_num]),
+                           "mean": tribe_mean, "var": tribe_var})
         tribe_num = tribe_num + 1
         
     # Plot tribe data 3D
@@ -99,9 +102,6 @@ def main():
             )
         )
     fig = go.Figure(data=plot_data_3d, layout=layout)
-    py.iplot(fig,filename='tribe-3d')
+    py.iplot(fig, filename='tribe-3d')
 
-
-if __name__ == "__main__":
-    main()
-    
+    return meta_tribe, tribe_colors

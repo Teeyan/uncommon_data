@@ -1,0 +1,51 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    background-image: url(https://imgur.com/R3pwxiZ.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+body {
+   
+}
+
+iframe {
+    display:block;
+    width:100%;
+}
+
+img {
+    display:block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100px;
+    height: 100px;
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.init {
+    border-radius: 25px;
+    width:auto;
+    height:auto;
+    padding-top:50px;
+    padding-bottom:50px;
+    background-color:beige;
+}
+
+input[name="upload"] {
+    align-content:center;
+    margin-left:40%;
+}
