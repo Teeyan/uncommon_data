@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>d:^)</title>
+        <style>
+            body {
+                  /* Location of the image */
+                  background-image: url(knuckles.jpg);
+              
+                  /* Background image is centered vertically and horizontally at all times */
+                  background-position: center center;
+                  
+                  /* Background image doesn't tile */
+                  background-repeat: no-repeat;
+                  
+                  /* Background image is fixed in the viewport so that it doesn't move when 
+                     the content's height is greater than the image's height */
+                  background-attachment: fixed;
+                  
+                  /* This is what makes the background image rescale based
+                     on the container's size */
+                  background-size: cover;
+                  
+                  /* Set a background color that will be displayed
+                     while the background image is loading */
+                  background-color: #464646;
+        }
+        .centered {
+          position: fixed;
+          top: 52%;
+          left: 51%;
+          /* bring your own prefixes */
+          transform: translate(-50%, -50%);
+          width:8%;
+        
+        }
+        .centere {
+          position: fixed;
+          top: 65%;
+          left: 52%;
+          /* bring your own prefixes */
+          transform: translate(-50%, -50%);
+          width:8%;
+        
+        }
+        
+        .upload-btn-wrapper {
+          position: relative;
+          overflow: hidden;
+          display: inline-block;
+        }
+        
+        .btn {
+          border: 2px solid gray;
+          color: gray;
+          background-color: white;
+          padding: 8px 20px;
+          border-radius: 8px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        
+        .upload-btn-wrapper input[type=file] {
+          font-size: 100px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+        }
+        </style>
+          <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <img src="tongue.png" class="centered">
+        </div>
+        <div class="centere">
+            <div class="upload-btn-wrapper" >
+              <button class="btn" >Upload a file</button>
+              <input type="file" id="myfile" />
+            </div>
+        </div>
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBEvC9H4rueXFE8QumD_o7WjUtw73hgwfY",
+        authDomain: "ugandanknuckles-2ec38.firebaseapp.com",
+        databaseURL: "https://ugandanknuckles-2ec38.firebaseio.com",
+        projectId: "ugandanknuckles-2ec38",
+        storageBucket: "ugandanknuckles-2ec38.appspot.com",
+        messagingSenderId: "931876598304"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+        var fileButton = document.getElementById("myfile");
+           fileButton.addEventListener('change', function(e){
+           var file = e.target.files[0];
+           var storageRef = firebase.storage().ref(file.name);
+                storageRef.put(file);
+        });  
+    </script>
+</html>
