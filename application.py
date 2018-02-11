@@ -18,4 +18,4 @@ def generate():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(debug=True)
+    app.run(port=port, host="0.0.0.0", debug=True)
