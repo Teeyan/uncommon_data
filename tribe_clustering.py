@@ -13,10 +13,10 @@ plotly.tools.set_credentials_file(username='Teeyan', api_key='9gnWe4vFPKT5iGTc05
 
 def tribe_cluster(file):
     # Constant Character Values
-    tribe_names = ["Ugandan", "Sanic", "Classical", "NANI?!?"]
-    tribe_colors = ["rgb(255, 0, 0)", "rgb(30,144,255)", "rgb(0,0,0)", "rgb(148,0,211)"]
+    tribe_names = ["Uganda", "Sanic", "Classical", "NANI?!?", "Saving the Rap Game"]
+    tribe_colors = ["rgb(255, 0, 0)", "rgb(30,144,255)", "rgb(0,0,0)", "rgb(148,0,211)", "rgb(255,105,180)"]
     img_link = ["https://imgur.com/VZAOqE0.png", "https://imgur.com/2LkeG4V.png", "https://imgur.com/WSZwQ4O.png",
-                "https://imgur.com/Bd8Iafa.png"]
+                "https://imgur.com/Bd8Iafa.png", "https://imgur.com/ItQVw2k.png"]
     
     # Read in the data set to a clean frame
     data = pd.read_csv(file, sep=",")
