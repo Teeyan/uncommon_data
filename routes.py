@@ -12,9 +12,8 @@ def home():
 @app.route('/tribe', methods=['GET', 'POST'])
 def generate():
 
-    #file = request.form['upload']
-
-    json_data = tribe_clustering.tribe_cluster("data/iris.txt")
+    file = request.files['upload']
+    json_data = tribe_clustering.tribe_cluster(file)
     return render_template('tribe.html', meta_tribe=json_data[0], tribe_colors=json_data[1])
 
 if __name__ == '__main__':

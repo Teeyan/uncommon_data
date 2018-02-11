@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="init text-center">
-    <form action="{{url_for('generate')}}" method="post">
+    <form action="{{url_for('generate')}}" method="post" enctype="multipart/form-data">
         <div class="form-group align-right">
             <label for="data_file">Dataset for Visualization</label>
             <input name="upload" type="file" class="form-control-file" id="data_file">

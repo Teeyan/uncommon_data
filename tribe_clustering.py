@@ -1,10 +1,10 @@
 import pandas as pd
-import sklearn
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_samples, silhouette_score
+from sklearn.metrics import silhouette_score
 import numpy as np
 import math
+from werkzeug.utils import secure_filename
 import plotly
 import plotly.plotly as py
 import plotly.graph_objs as go
@@ -12,7 +12,7 @@ plotly.tools.set_credentials_file(username='Teeyan', api_key='9gnWe4vFPKT5iGTc05
 
 
 def tribe_cluster(file):
-    # Get the data file name and the number of tribes
+    # Constant Character Values
     tribe_names = ["Ugandan", "Sanic", "Classical", "NANI?!?"]
     tribe_colors = ["rgb(255, 0, 0)", "rgb(30,144,255)", "rgb(0,0,0)", "rgb(148,0,211)"]
     img_link = ["https://imgur.com/VZAOqE0.png", "https://imgur.com/2LkeG4V.png", "https://imgur.com/WSZwQ4O.png",
