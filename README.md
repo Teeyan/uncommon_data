@@ -4,10 +4,15 @@ This project won most innovative hack for UChicago's 2018 Hackathon! Thanks to a
 # uncommon_data
 Visualize csv datasets with Ugandan Knuckles Tribes using Principle Component Analysis and pandas/scikit-learn.
 
-# Use Case
-The python script is self contained in a flask application so running the server on localhost will enable you to try it out!
+The primary script with data processing logic is contained in **tribe_clustering.py**.
 
-In addition we have an Amazon EC2 instance up and running but it may be taken down in the future. You can try it out here (if it still exists) : http://ec2-54-167-140-161.compute-1.amazonaws.com/
+The script is wrapped up inside a flask application which ties it to a simple UI that accepts a user uploaded .txt or .csv file and displays the resultant figures.
 
 # Caveats
-Obviously the nuances of doing data visualization in this manner is such that results are not always going to be pristine. For best results approach this with datsets geared towards clustering tasks that contain primarily continuous attributes. We are trying to expand the platform and will hopefully increase verbosity in the future. 
+Obviously the nuances of doing data visualization in this manner is such that results are not always going to be pristine.
+
+It should be noted that blindly throwing any dataset at this visualization tool is not a good approach.
+
+Ideal use case would be for a very high dimensional continuous dataset as is the usual targets for PCA and K-Means.
+
+In the future we would like to expand the platform to include different approaches and aid in visualization of many more different dataset tasks.
